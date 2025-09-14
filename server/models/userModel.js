@@ -35,6 +35,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+        select: false,
         minLength: [8, "Password must be 8 characters long"],
         validate: {
             validator: function (v) {
@@ -88,5 +89,5 @@ userSchema.methods.isMatchPassword = async function (password) {
 }
 
 
-const User =  mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 module.exports = User;

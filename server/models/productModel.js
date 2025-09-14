@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
         max: 1000000,
         validate: {
             validator: function (v) {
-                return v <= this.mrp;
+                return v <= this.MRP;
             },
             message: "Price cannot be greater than MRP."
 
